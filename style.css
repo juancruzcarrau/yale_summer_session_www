@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+
+body{
+  margin-left: 200px;
+  margin-right: 200px;
+  background-image: url(stray_child.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  font-family: "Comfortaa";
+}
+
+h1{
+  text-align: center;
+  text-decoration: underline;
+}
+
+h2{
+  text-align: center;
+}
+
+a{
+  color: white;
+}
