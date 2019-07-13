@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+@font-face {
+font-family: Billabong;
+src: url(../Billabong.ttf);
+}
+
+body{
+  display: block;
+  background-image:url(../parchment_1.jpg);
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
+  margin-left:20vw;
+  margin-right:20vw;
+  font-family: "Josefin Sans";
+  font-size: 14px;
+}
+
+h1{
+  text-align: center;
+  font-family: "Billabong";
+  font-size: 5vw;
+  margin: 1vw;
+}
+
+a{
+  color: black;
+}
+
+/*----------------------------------------------*/
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-gap: 2vw;
+}
+
+.contained{
+  text-align: justify;
+}
+
+.contained>img{
+  width: 100%;
+}
+
+.contained_2{
+  grid-column: 1 / -1;
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
+
+.link{
+  display: inline;
+}
+.link>a{
+  color: black;
+}
+
+.video-mask{
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+/*----------------------------------------------*/
+
+@media screen and (max-width:780px){
+  body{
+    background-image:url(../parchment_2.jpg);
+    margin-left:5vw;
+    margin-right:5vw;
+  }
+
+  h1{
+    font-size: 9vw;
+  }
+
+@media screen and (max-width:480px){
+  .container{
+    grid-template-columns: 1fr;
+  }
+
+  .contained_2{
+    grid-column: 1;
+  }
+}
