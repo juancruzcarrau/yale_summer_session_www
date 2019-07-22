@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
 
 body{
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 12vw;
+  margin-right: 12vw;
   background-image: url(stray_child.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
+  background-size: 100vw 100vh;
   background-attachment: fixed;
   color: white;
   font-family: "Comfortaa";
@@ -22,4 +22,26 @@ h2{
 
 a{
   color: white;
+}
+
+.main{
+}
+
+.sec{
+  font-family: "Cinzel";
+  font-size: 120px;
+  color: white;
+  display: none;
+}
+
+.sec>p{
+  text-align: center;
+}
+
+.bttn{
+  border-radius: 5px;
+  font-size: 17px;
+  font-family: "Comfortaa";
+  padding: 10px 10px;
+  background-color: rgb(250, 250, 250);
 }
