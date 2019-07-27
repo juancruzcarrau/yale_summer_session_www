@@ -1,0 +1,32 @@
+body{
+  margin:0px;
+}
+
+.container{
+  display:flex;
+  justify-content: center;
+}
+
+a>img{
+  height:9vh;
+  opacity: 0.75;
+  transition: 1.5s;
+}
+
+a>img:hover{
+  transform: rotate(90deg) scale(1.1);
+  transition: 2s;
+}
+
+.all{
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}

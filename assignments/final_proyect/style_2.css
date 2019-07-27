@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'break_regular';
+    src: url('break_fill/break_regular_fill.ttf');
+}
+
+@font-face {
+    font-family: 'Capsuula';
+    src: url('Capsuula.ttf');
+}
+
+.title{
+  font-family:'break_regular';
+  font-size: 8vw;
+  padding-top: 2vw;
+  padding-right: 2vw;
+  padding-left: 2vw;
+  text-align: center;
+  color: #383838;
+}
+
+.text{
+  font-family: 'Capsuula';
+  padding-top: 2vw;
+  padding-right: 12vw;
+  padding-left: 12vw;
+  text-align: justify;
+  font-size: 2vw;
+}
+
+a>img{
+  transform:rotate(90deg);
+  height:9vh;
+  opacity: 0.75;
+  transition: 1.5s;
+}
+
+.container{
+  display:flex;
+  justify-content: center;
+}
+
+a>img:hover{
+  transform: rotate(0deg) scale(1.1);
+  transition: 2s;
+}
+
+.all{
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
