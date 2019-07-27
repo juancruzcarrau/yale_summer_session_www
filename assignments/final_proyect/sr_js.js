@@ -105,11 +105,13 @@ for (var i = 0; i < 3; i++) {
 
 let ccolor = random_rgba();
 
+let size = 0.025*innerWidth;
+
 function animate(){
   requestAnimationFrame(animate);
   c.clearRect(0, 0, innerWidth, innerHeight);
   c.beginPath();
-  c.arc(w/2, h/2, 30, 0, Math.PI * 2,false);
+  c.arc(w/2, h/2, size, 0, Math.PI * 2,false);
   c.strokeStyle = ccolor;
   c.stroke();
   for (var i = 0; i < 3; i++) {
