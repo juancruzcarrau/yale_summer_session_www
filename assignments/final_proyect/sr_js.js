@@ -105,7 +105,13 @@ for (var i = 0; i < 3; i++) {
 
 let ccolor = random_rgba();
 
-let size = 0.025*innerWidth;
+let size;
+if (innerWidth > 980){
+  size = 30;
+}
+else {
+  size = 70;
+}
 
 function animate(){
   requestAnimationFrame(animate);
