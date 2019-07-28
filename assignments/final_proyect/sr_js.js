@@ -46,6 +46,12 @@ function Line(x, y, type){
     c.moveTo(w/2,h/2);
     c.lineTo(cX(this.x),cY(this.y));
     c.strokeStyle = this.color;
+    if (innerWidth > 980){
+      c.lineWidth = 4;
+    }
+    else {
+      c.lineWidth = 10;
+    }
     c.lineWidth = 4;
     c.stroke();
   }
@@ -110,7 +116,7 @@ if (innerWidth > 980){
   size = 30;
 }
 else {
-  size = 70;
+  size = 60;
 }
 
 function animate(){
