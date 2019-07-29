@@ -1,6 +1,7 @@
 let w = window.innerWidth;
 let h = window.innerHeight;
 let d;
+
 // VARIOUS FUNCTIONS -----------------------------------------------------------
 var documentTitle = document.title + ` `;
 
@@ -15,7 +16,6 @@ function random_rgba() {
 }
 
 // FUNTIONS TO CHANCE ORIGIN OF COORDINATES AND POSITION IT IN THE MIDDLE ------
-
 function cX(x){
   return x + innerWidth/2;
 }
@@ -23,7 +23,10 @@ function cX(x){
 function cY(y){
   return -y + innerHeight/2;
 }
-// DRAWING IN CANVAS -----------------------------------------------------------
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////OBJECTS/////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 let canvas = document.querySelector(`canvas`);
 canvas.width= w;
@@ -31,6 +34,7 @@ canvas.height= h*0.85;
 
 let c = canvas.getContext(`2d`);
 
+// LINE ------------------------------------------------------------------------
 function Line(x, y, type){
   this.x = x;
   this.y = y;
@@ -47,13 +51,14 @@ function Line(x, y, type){
     c.moveTo(innerWidth/2,innerHeight/2);
     c.lineTo(cX(this.x),cY(this.y));
     c.strokeStyle = this.color;
+
     if (innerWidth > 980){
       c.lineWidth = 4;
     }
     else {
       c.lineWidth = 8;
     }
-    // c.lineWidth = 4;
+
     c.stroke();
   }
 
@@ -104,37 +109,43 @@ function Line(x, y, type){
 let lines = [];
 lines[0] = new Line(0, h/4, 1);
 lines[1] = new Line(0, h/5, 2);
-lines[2] = new Line(0, h/6, 3);
+lines[2] = new Line(0, h/9, 3);
 
 for (var i = 0; i < 3; i++) {
   lines[i].draw();
 }
 
-let ccolor = random_rgba();
+//CIRCLE -----------------------------------------------------------------------
+function circle(){
+  let size;
+  if (innerWidth > 980){
+    size = 30;
+  }
+  else {
+    size = 50;
+  }
 
-let size;
-if (innerWidth > 980){
-  size = 30;
-}
-else {
-  size = 50;
-}
-
-function animate(){
-  requestAnimationFrame(animate);
-  // ---------------------------
-  canvas.width= innerWidth;
-  canvas.height= innerHeight*0.85;
-  // ---------------------------
-  c.clearRect(0, 0, innerWidth, innerHeight);
   c.beginPath();
   c.arc(innerWidth/2, innerHeight/2, size, 0, Math.PI * 2,false);
   c.strokeStyle = ccolor;
   c.lineWidth = 2;
   c.stroke();
+}
+let ccolor = random_rgba();
+
+////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////LOOP//////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+function animate(){
+  requestAnimationFrame(animate);
+  canvas.width= innerWidth;
+  canvas.height= innerHeight*0.85;
+  c.clearRect(0, 0, innerWidth, innerHeight);
   for (var i = 0; i < 3; i++) {
     lines[i].update();
   }
+  circle();
 }
 
 animate();
