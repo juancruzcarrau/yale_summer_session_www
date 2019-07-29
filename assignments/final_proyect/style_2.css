@@ -46,6 +46,10 @@ a>img{
   justify-content: center;
 }
 
+.images{
+  width:100%;
+}
+
 a>img:hover{
   transform: rotate(0deg) scale(1.1);
   transition: 2s;
