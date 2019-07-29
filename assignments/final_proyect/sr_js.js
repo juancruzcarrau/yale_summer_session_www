@@ -11,17 +11,17 @@ var documentTitle = document.title + ` `;
 
 function random_rgba() {
     var o = Math.round, r = Math.random, s = 255;
-    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + .7 + ')';
 }
 
 // FUNTIONS TO CHANCE ORIGIN OF COORDINATES AND POSITION IT IN THE MIDDLE ------
 
 function cX(x){
-  return x + w/2;
+  return x + innerWidth/2;
 }
 
 function cY(y){
-  return -y + h/2;
+  return -y + innerHeight/2;
 }
 // DRAWING IN CANVAS -----------------------------------------------------------
 
@@ -43,16 +43,17 @@ function Line(x, y, type){
 
   this.draw = function(){
     c.beginPath();
-    c.moveTo(w/2,h/2);
+    c.lineCap = "round";
+    c.moveTo(innerWidth/2,innerHeight/2);
     c.lineTo(cX(this.x),cY(this.y));
     c.strokeStyle = this.color;
     if (innerWidth > 980){
       c.lineWidth = 4;
     }
     else {
-      c.lineWidth = 10;
+      c.lineWidth = 8;
     }
-    c.lineWidth = 4;
+    // c.lineWidth = 4;
     c.stroke();
   }
 
@@ -78,7 +79,7 @@ function Line(x, y, type){
     if ( this.x > 0 ){
       this.pass2 = true;
     }
-
+    //-------------------------------------------
 
     d = new Date();
     switch (this.type){
@@ -116,15 +117,20 @@ if (innerWidth > 980){
   size = 30;
 }
 else {
-  size = 60;
+  size = 50;
 }
 
 function animate(){
   requestAnimationFrame(animate);
+  // ---------------------------
+  canvas.width= innerWidth;
+  canvas.height= innerHeight*0.85;
+  // ---------------------------
   c.clearRect(0, 0, innerWidth, innerHeight);
   c.beginPath();
-  c.arc(w/2, h/2, size, 0, Math.PI * 2,false);
+  c.arc(innerWidth/2, innerHeight/2, size, 0, Math.PI * 2,false);
   c.strokeStyle = ccolor;
+  c.lineWidth = 2;
   c.stroke();
   for (var i = 0; i < 3; i++) {
     lines[i].update();
