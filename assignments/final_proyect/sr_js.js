@@ -56,7 +56,7 @@ function Line(x, y, type){
       c.lineWidth = 4;
     }
     else {
-      c.lineWidth = 8;
+      c.lineWidth = 6;
     }
 
     c.stroke();
@@ -118,12 +118,13 @@ for (var i = 0; i < 3; i++) {
 //CIRCLE -----------------------------------------------------------------------
 function circle(){
   let size;
-  if (innerWidth > 980){
-    size = 30;
-  }
-  else {
-    size = 50;
-  }
+  // if (innerWidth > 980){
+  //   size = 30;
+  // }
+  // else {
+  //   size = 40;
+  // }
+  size = 30;
 
   c.beginPath();
   c.arc(innerWidth/2, innerHeight/2, size, 0, Math.PI * 2,false);

@@ -63,3 +63,13 @@ a>img:hover{
         opacity:1;
     }
 }
+
+@media screen and (max-width:780px){
+  .text{
+    font-size: 5vw;
+  }
+
+  .title{
+    font-size: 9vw;
+  }
+}
