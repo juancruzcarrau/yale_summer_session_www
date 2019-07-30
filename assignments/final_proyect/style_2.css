@@ -47,6 +47,12 @@ body {
   width:100%;
 }
 
+.last{
+  width: 80%;
+  border: .2vw solid #383838;
+  border-radius: 4vw;
+}
+
 a>img{
   transform:rotate(90deg);
   height:9vh;
@@ -84,5 +90,9 @@ a>img:hover{
 
   #sec{
     font-size: 8vw;
+  }
+
+  .last{
+    width: 100%;
   }
 }
