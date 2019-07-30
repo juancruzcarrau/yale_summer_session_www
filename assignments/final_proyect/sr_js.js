@@ -21,7 +21,7 @@ function cX(x){
 }
 
 function cY(y){
-  return -y + innerHeight/2;
+  return -y + innerHeight/2 - (13/100)*innerHeight;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -30,7 +30,7 @@ function cY(y){
 
 let canvas = document.querySelector(`canvas`);
 canvas.width= w;
-canvas.height= h*0.85;
+canvas.height= h*0.76;
 
 let c = canvas.getContext(`2d`);
 
@@ -48,7 +48,7 @@ function Line(x, y, type){
   this.draw = function(){
     c.beginPath();
     c.lineCap = "round";
-    c.moveTo(innerWidth/2,innerHeight/2);
+    c.moveTo(cX(0),cY(0));
     c.lineTo(cX(this.x),cY(this.y));
     c.strokeStyle = this.color;
 
@@ -127,7 +127,7 @@ function circle(){
   size = 30;
 
   c.beginPath();
-  c.arc(innerWidth/2, innerHeight/2, size, 0, Math.PI * 2,false);
+  c.arc(cX(0), cY(0), size, 0, Math.PI * 2,false);
   c.strokeStyle = ccolor;
   c.lineWidth = 2;
   c.stroke();
@@ -141,7 +141,7 @@ let ccolor = random_rgba();
 function animate(){
   requestAnimationFrame(animate);
   canvas.width= innerWidth;
-  canvas.height= innerHeight*0.85;
+  canvas.height= innerHeight*0.76;
   c.clearRect(0, 0, innerWidth, innerHeight);
   for (var i = 0; i < 3; i++) {
     lines[i].update();

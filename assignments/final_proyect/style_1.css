@@ -7,6 +7,16 @@ body{
   justify-content: center;
 }
 
+.image{
+  height:10vh;
+  opacity: 0.6;
+  transition: 1.5s;
+}
+
+.image:hover{
+  transform: rotate(-90deg) scale(1.1);
+  transition: 2s;
+}
 a>img{
   height:9vh;
   opacity: 0.6;
