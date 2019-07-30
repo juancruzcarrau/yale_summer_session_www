@@ -15,6 +15,13 @@ function random_rgba() {
     return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + .7 + ')';
 }
 
+function colors(){
+  for (var i = 0; i < 3; i++) {
+    lines[i].color = random_rgba();
+  }
+  ccolor = random_rgba();
+}
+
 // FUNTIONS TO CHANCE ORIGIN OF COORDINATES AND POSITION IT IN THE MIDDLE ------
 function cX(x){
   return x + innerWidth/2;
@@ -118,12 +125,6 @@ for (var i = 0; i < 3; i++) {
 //CIRCLE -----------------------------------------------------------------------
 function circle(){
   let size;
-  // if (innerWidth > 980){
-  //   size = 30;
-  // }
-  // else {
-  //   size = 40;
-  // }
   size = 30;
 
   c.beginPath();
