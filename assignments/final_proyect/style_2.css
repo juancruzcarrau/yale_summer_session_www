@@ -25,6 +25,10 @@ body {
   color: #383838;
 }
 
+#sec{
+  font-size: 5vw;
+}
+
 .text{
   font-family: 'break_regular';
   padding-top: 2vw;
@@ -34,13 +38,6 @@ body {
   font-size: 2vw;
 }
 
-a>img{
-  transform:rotate(90deg);
-  height:9vh;
-  opacity: 0.75;
-  transition: 1.5s;
-}
-
 .container{
   display:flex;
   justify-content: center;
@@ -48,6 +45,13 @@ a>img{
 
 .images{
   width:100%;
+}
+
+a>img{
+  transform:rotate(90deg);
+  height:9vh;
+  opacity: 0.75;
+  transition: 1.5s;
 }
 
 a>img:hover{
@@ -74,6 +78,11 @@ a>img:hover{
   }
 
   .title{
-    font-size: 9vw;
+    font-size: 10vw;
+    padding-top: 10vw;
+  }
+
+  #sec{
+    font-size: 8vw;
   }
 }
